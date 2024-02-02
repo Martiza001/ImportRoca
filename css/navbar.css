@@ -1,0 +1,99 @@
+.navbar {
+    font-size: 14px;
+    background-color: #ffffff;
+    height: 85px;
+    margin: 20px;
+    border-radius: 20px;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 97%;
+    top: 0;
+    z-index: 1060;
+    /* Asegura que el navbar esté por encima del contenido */
+
+}
+
+.navbar-brand {
+    font-weight: 500;
+    color: #009970;
+    font-size: 24px;
+    transition: 0.3s color;
+}
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+}
+
+.navbar-toggler:focus, .btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+.nav-item {
+    margin: 0;
+}
+
+.nav-link {
+    color: #666777;
+    font-weight: 500;
+    position: relative;
+    text-decoration: none;
+    transition: 0.3s color;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #000000;
+}
+.contenido {
+    margin-top: 120px;
+    /* Asegura que el contenido comience después del navbar */
+    padding: 20px;
+}
+@media (min-width: 991px) {
+    .nav-link::before{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: #009970;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::before, .nav-link.active::before {
+        width: 100%;
+        visibility: visible;
+    }
+}
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.dropdown-menu {
+    font-size: 13px;
+    width: 190px; /*  ancho del dropdown */
+    background-color: #fff; /* color de fondo */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Agrega sombra al dropdown para un efecto visual */
+}
+
+/* Estilos adicionales para los elementos dentro del dropdown si es necesario */
+.dropdown-menu a {
+    color: #333;
+    text-decoration: none;
+    padding: 7px;
+    display: block;
+    transition: 0.3s 
+}
+.dropdown-menu a:hover {
+    background-color: #a7a7a7; /* color de fondo al pasar el mouse sobre los elementos del dropdown */
+}
+.offcanvas.show:not(.hiding), .offcanvas.showing {
+    transform: none;
+    max-width: 220px;
+}
